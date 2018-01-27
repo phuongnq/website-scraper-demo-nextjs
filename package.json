@@ -27,7 +27,7 @@
     "start": "npm run build && env NODE_ENV=production node app.js",
     "dev": "nodemon --ignore app/ app.js"
   },
-  "eslintConfig" : {
+  "eslintConfig": {
     "extends": "airbnb",
     "settings": {
       "import/core-modules": [
@@ -86,7 +86,9 @@
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.0.0",
-    "sass-loader": "^6.0.6"
+    "sass-loader": "^6.0.6",
+    "website-scraper": "^3.3.2",
+    "zip-folder": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^4.10.0",

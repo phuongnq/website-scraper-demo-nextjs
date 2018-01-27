@@ -26,3 +26,188 @@ $primary-color: black;
     display: flex;
   }
 }
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Montserrat", helvetica, arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+  color: #27313C;
+  background-color: #F3F3F3;
+}
+
+body {
+  max-width: 30em;
+  margin: 3em auto;
+}
+
+.field + .field {
+  margin-top: 0.75em;
+}
+
+.field {
+  position: relative;
+  border: none;
+}
+
+label {
+  font-size: 0.75em;
+  text-transform: uppercase;
+  color: #919FAF;
+}
+
+input ~ label {
+  position: absolute;
+  top: -3em;
+  display: block;
+  border-radius: 3px;
+  padding: 0.5em;
+  font-size: 0.625em;
+  color: #F3F3F3;
+  background-color: #27313C;
+  pointer-events: none;
+  text-transform: initial;
+  z-index: 2;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease 0;
+  transition: opacity 0.25s ease 0;
+}
+input ~ label::before {
+  position: absolute;
+  display: inline-block;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #27313C;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  z-index: 1;
+  bottom: -5px;
+  left: 10px;
+}
+
+input:focus ~ label {
+  opacity: 0.8;
+  -webkit-transition: opacity 0.5s ease 1s;
+  transition: opacity 0.5s ease 1s;
+}
+
+input, button {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  padding: 0.75em;
+  font-size: inherit;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+  background-color: #E2E5E5;
+  border: 2px solid #E2E5E5;
+}
+input:focus, button:focus {
+  border-color: #919FAF;
+  background-color: #919FAF;
+}
+
+::-webkit-input-placeholder {
+  font-size: 0.75em;
+  color: #919FAF;
+}
+
+button:focus, input:focus {
+  position: relative;
+  outline: none;
+  color: white;
+}
+
+input[type="submit"], button {
+  display: inline-block;
+  width: auto;
+  font-size: 0.875em;
+  padding: 0.71429em 2.28571em;
+  margin: 0.28571em 0;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  background-color: #2AB0C5;
+  border: 2px solid #2AB0C5;
+  text-transform: uppercase;
+}
+input[type="submit"]::before, input[type="submit"]::after, button::before, button::after {
+  font-family: "Ionicons";
+  content: "";
+  margin: 0 0.25em;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+input[type="submit"]::after, button::after {
+  content: "";
+}
+input[type="submit"]:focus, button:focus {
+  border-color: #2392a3;
+  background-color: #2392a3;
+}
+input[type="submit"]:focus::after, input[type="submit"]:focus::before, button:focus::after, button:focus::before {
+  opacity: 1;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  -webkit-appearance: none;
+  height: 2em;
+  width: 4em;
+  border-radius: 1.5em;
+  background-color: #E2E5E5;
+  border-color: transparent;
+  background-clip: padding-box;
+  color: #919FAF;
+  vertical-align: middle;
+}
+input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 50%;
+  background-color: white;
+  border-radius: 100%;
+  border: 2px solid transparent;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background-clip: padding-box;
+  z-index: 2;
+}
+input[type="checkbox"]::after {
+  position: absolute;
+  left: 0.675em;
+  top: 0.375em;
+  font-family: "Ionicons";
+  content: "";
+  letter-spacing: 0.75em;
+  z-index: 1;
+}
+input[type="checkbox"]:focus {
+  color: white;
+  border-color: transparent;
+  background-color: #919FAF;
+}
+input[type="checkbox"]:checked {
+  color: white;
+  background-color: #1ABC9C;
+  border-color: transparent;
+}
+input[type="checkbox"]:checked::before {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
